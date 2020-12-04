@@ -248,17 +248,18 @@ var Vector = require('../geometry/Vector');
                 });
             } else {
                 // initialise a decomposition
-                var concave = vertices.map(function(vertex) {
-                    return [vertex.x, vertex.y];
-                });
+                // var concave = vertices.map(function(vertex) {
+                //     return [vertex.x, vertex.y];
+                // });
 
-                // vertices are concave and simple, we can decompose into parts
-                decomp.makeCCW(concave);
-                if (removeCollinear !== false)
-                    decomp.removeCollinearPoints(concave, removeCollinear);
+                // // vertices are concave and simple, we can decompose into parts
+                // decomp.makeCCW(concave);
+                // if (removeCollinear !== false)
+                //     decomp.removeCollinearPoints(concave, removeCollinear);
 
-                // use the quick decomposition algorithm (Bayazit)
-                var decomposed = decomp.quickDecomp(concave);
+                // // use the quick decomposition algorithm (Bayazit)
+                // var decomposed = decomp.quickDecomp(concave);
+                var decomposed = decomp(vertices);
 
                 // for each decomposed chunk
                 for (i = 0; i < decomposed.length; i++) {
@@ -267,8 +268,10 @@ var Vector = require('../geometry/Vector');
                     // convert vertices into the correct structure
                     var chunkVertices = chunk.map(function(vertices) {
                         return {
-                            x: vertices[0],
-                            y: vertices[1]
+                            // x: vertices[0],
+                            // y: vertices[1]
+                            x: vertices.x,
+                            y: vertices.y
                         };
                     });
 
