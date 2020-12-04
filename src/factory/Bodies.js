@@ -209,7 +209,8 @@ var Vector = require('../geometry/Vector');
             z;
 
         try {
-            decomp = globals.decomp || require('poly-decomp');
+            decomp = globals.decomp
+            // decomp = globals.decomp || require('poly-decomp');
         } catch (e) {
             // decomp is undefined
         }

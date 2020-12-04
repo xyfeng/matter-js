@@ -5,14 +5,14 @@
  */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory((function webpackLoadOptionalExternalModule() { try { return require("poly-decomp"); } catch(e) {} }()));
+		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define("Matter", ["poly-decomp"], factory);
+		define("Matter", [], factory);
 	else if(typeof exports === 'object')
-		exports["Matter"] = factory((function webpackLoadOptionalExternalModule() { try { return require("poly-decomp"); } catch(e) {} }()));
+		exports["Matter"] = factory();
 	else
-		root["Matter"] = factory(root["decomp"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE__27__) {
+		root["Matter"] = factory();
+})(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -6992,7 +6992,8 @@ var Vector = __webpack_require__(2);
             z;
 
         try {
-            decomp = globals.decomp || __webpack_require__(27);
+            decomp = globals.decomp
+            // decomp = globals.decomp || require('poly-decomp');
         } catch (e) {
             // decomp is undefined
         }
@@ -8819,13 +8820,13 @@ Matter.Resolver = __webpack_require__(21);
 Matter.SAT = __webpack_require__(13);
 
 Matter.Constraint = __webpack_require__(8);
-Matter.MouseConstraint = __webpack_require__(28);
+Matter.MouseConstraint = __webpack_require__(27);
 
 Matter.Common = __webpack_require__(0);
 Matter.Engine = __webpack_require__(22);
 Matter.Events = __webpack_require__(4);
 Matter.Mouse = __webpack_require__(14);
-Matter.Runner = __webpack_require__(29);
+Matter.Runner = __webpack_require__(28);
 Matter.Sleeping = __webpack_require__(7);
 Matter.Plugin = __webpack_require__(17);
 
@@ -8834,16 +8835,16 @@ Matter.Metrics = __webpack_require__(23);
 // @endif
 
 Matter.Bodies = __webpack_require__(16);
-Matter.Composites = __webpack_require__(30);
+Matter.Composites = __webpack_require__(29);
 
 Matter.Axes = __webpack_require__(15);
 Matter.Bounds = __webpack_require__(1);
-Matter.Svg = __webpack_require__(31);
+Matter.Svg = __webpack_require__(30);
 Matter.Vector = __webpack_require__(2);
 Matter.Vertices = __webpack_require__(3);
 
 Matter.Render = __webpack_require__(10);
-Matter.RenderPixi = __webpack_require__(32);
+Matter.RenderPixi = __webpack_require__(31);
 
 // aliases
 
@@ -9086,13 +9087,6 @@ var Vertices = __webpack_require__(3);
 
 /***/ }),
 /* 27 */
-/***/ (function(module, exports) {
-
-if(typeof __WEBPACK_EXTERNAL_MODULE__27__ === 'undefined') {var e = new Error("Cannot find module 'undefined'"); e.code = 'MODULE_NOT_FOUND'; throw e;}
-module.exports = __WEBPACK_EXTERNAL_MODULE__27__;
-
-/***/ }),
-/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -9359,7 +9353,7 @@ var Bounds = __webpack_require__(1);
 
 
 /***/ }),
-/* 29 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -9695,7 +9689,7 @@ var Common = __webpack_require__(0);
 
 
 /***/ }),
-/* 30 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -10028,7 +10022,7 @@ var Bodies = __webpack_require__(16);
 
 
 /***/ }),
-/* 31 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -10259,7 +10253,7 @@ var Common = __webpack_require__(0);
 })();
 
 /***/ }),
-/* 32 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**

@@ -45,12 +45,12 @@ module.exports = (env = {}) => {
             })
         ],
         externals: {
-            'poly-decomp': {
-                commonjs: 'poly-decomp',
-                commonjs2: 'poly-decomp',
-                amd: 'poly-decomp',
-                root: 'decomp'
-            }
+            // 'poly-decomp': {
+            //     commonjs: 'poly-decomp',
+            //     commonjs2: 'poly-decomp',
+            //     amd: 'poly-decomp',
+            //     root: 'decomp'
+            // }
         },
         devServer: {
             contentBase: [
